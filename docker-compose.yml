@@ -1,0 +1,14 @@
+version: '3'
+services:
+  cardio-app:
+    build: .
+    ports:
+      - "${PORT}:${PORT}"
+    environment:
+      - PORT=${PORT}
+      - DB_NAME=${DB_NAME}
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    env_file:
+      - .env
